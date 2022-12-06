@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Suggestion</title>
+  </head>
+  <body>
+    <div id="preloader">
+        <div id="status">
+  
+        </div>
+    </div>
+    <nav class="navbar shadow sticky-top navbar-expand-sm navbar-light bg-custom" id="navdarkmode">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <button class="btn btn-light btn-sm" id="button-toggle">
+              <i class='bx bx-chevrons-right bx-sm text-custom' id="icon"></i>
+            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" style="height: 30px; width: 50px;" type="checkbox" id="switch" checked>
+                  <label class="form-check-label ml-2 mt-2 text-light" for="flexSwitchCheckDefault"><i class='bx bxs-moon bx-sm text-dark' style="position: relative; left: 30px;" id="labelmode"></i></label>
+                </div>
+              </li>
+            </ul>
+            <form class="d-flex">
+             <div class="mr-4 pt-2 text-light">
+             </div>
+              <button class="btn btn-light text-custom" id="logout" type="button">Logout</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <div class="sidebar shadow p-4 bg-light" id="sidebar">
+        <img src="./image/idnlogo.png" alt="logo" width="100px" class="d-block mx-auto">
+        <!-- untuk list side bar -->
+        <ul>
+          <li>
+            <a href="dashboard.html"> <i class='bx bxs-dashboard bx-sm'></i> Dashboard</a>
+          </li>
+          <li>
+            <a href="appertizer.html"> <i class='bx bxs-baguette bx-sm'></i> Appertizer</a>
+          </li>
+          <li>
+            <a href="#"> <i class='bx bxl-discourse bx-sm'></i> Main Coures</a>
+          </li>
+          <li>
+            <a href="#"> <i class='bx bxs-popsicle bx-sm'></i> Dessert</a>
+          </li>
+          <li>
+            <a href="#"> <i class='bx bx-buildings bx-sm'></i> Cabang</a>
+          </li>
+          <li>
+            <a href="owner.html"> <i class='bx bx-child bx-sm'></i> Owner</a>
+          </li>
+          <li>
+            <a href="reservasi.html"> <i class='bx bxs-baguette bx-sm'></i> Reservasi</a>
+          </li>
+          <li>
+            <a href="suggestion.html"> <i class='bx bx-paper-plane' ></i></i> Suggestion</a>
+          </li>
+        </ul>
+    </div>
+    <div id="main-content">
+        <div class="container text-center mt-3">
+                <h2 class="h2 text-center mt-4" id="text-darkmode" style="font-family: Arial, Helvetica, sans-serif">Reservasi</h2>
+                <form method="post" netlify>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <label for="nama">Nama</label>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="text" name="nama" class="form-control" placeholder="Isi namamu">    
+                    </div>
+                    <div class="col-md-6">
+                        <label for="nama">Email</label>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Isi emailmu">    
+                    </div>
+                    <div class="col-md-6">
+                        <label for="tanggalwaktu">Tanggal & Waktu</label>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="datetime-local" class="form-control" placeholder="isi">
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">Pesanan</label>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <div class="row" id="field_dinamis">
+                                <div class="col-md-4">
+                                    <select id="select_api" class="form-select name_list" name="pesanan[]" style="width: 120px; height: 50px;">
+    
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="number" class="form-control" placeholder="stock"/>
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-success" type="button" id="add">
+                                        <i class='bx bx-plus'></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" id="button" class="btn btn-primary btn-outline-light btn-sm mt-3 float-start">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                </form>
+        </div>
+    </div>
+    <!-- end main content -->
+    <footer class="footer fixed-bottom bg-primary" id="footer">
+        <div class="container text-center">
+            <span class="text-light">Copyright &copy; by M . Azzam</span>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- select2 js -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+    $('#status').fadeOut(),
+    $('#preloader').delay(350).fadeOut('slow')
+    $('body').delay(350).css({'overflow':'visible'});
+    
+    document.getElementById('button-toggle').addEventListener('click', ()=> {
+        document.getElementById('sidebar').classList.toggle('active-sidebar');
+        document.getElementById('main-content').classList.toggle('active-main-content');
+        document.getElementById('footer').classList.toggle('active-footer')
+         })
+
+          $('#button-toggle').click(function(){
+          $('#icon').toggleClass('bx-chevrons-right bx-chevrons-left');
+         })
+        // without select2 js
+        // //  sebagai wadah
+        // var template = '';
+        // //  api source
+        // var apisource = 'https://www.themealdb.com/api/json/v1/1/categories.php';
+
+        // fetch(apisource).then(res=>res.json()).then(data=>{
+        //   for (i = 1; i < apisource.length; i++) {
+        //    template += '<option>'+ data.categories[i].strCategory +'</option>';
+        //    $('#select_api').html(template);
+        //     }
+        //   });
+
+        // with select2 js
+        $('.select_list').select2({
+            placeholder : 'pilih makanan',
+            ajax : {
+                // format data adalah json
+                dataType : 'json',
+                // url untuk menampung data api
+                url : 'https://www.themealdb.com/api/json/v1/1/categories.php',
+                // properti processResults adalah hasil yang akan ditampilkan 
+                processResults : function(data) {
+                    return {
+                        // looping data select2 js
+                        results : $.map(data.categories, function(item){
+                            // hasil dari loopingan yang akan di tampilkan 
+                            return {
+                                // format loopingan select2 js hanya ada 2 text dan id
+                                text : item.strCategory,
+                                id : item.idCategory
+                            };
+                        })
+                    }
+                }
+            }
+        })
+
+        // fungsi multiple add atau create
+        // var i sebagain patokan angka awal
+        var i = 1;
+        $('#add').click(function(){
+
+            i++;
+            $('#field_dinamis').append(
+                '<div class="col-md-4 mt-3 row'+i+'">'+
+                                '<select class="form-select name_list" name="pesanan[]" style="width: 120px; height: 50px;"></select>'+
+                '</div>'+
+                '<div class="col-md-4 mt-3 row'+i+'">'+
+                                '<input type="number" class="form-control" placeholder="stock"/>'+
+                '</div>'+
+                '<div class="col-md-4 mt-3 row'+i+'">'+
+                                '<button class="btn btn-danger btn-remove" type="button" id="'+i+'">'+
+                                    '<i class="bx bx-minus"></i>'+
+                                '</button>'+
+                '</div>'
+            );
+
+            $('.name_list').select2({
+            placeholder : 'pilih makanan',
+            ajax : {
+                // format data adalah json
+                dataType : 'json',
+                // url untuk menampung data api
+                url : 'https://www.themealdb.com/api/json/v1/1/categories.php',
+                // properti processResults adalah hasil yang akan ditampilkan 
+                processResults : function(data) {
+                    return {
+                        // looping data select2 js
+                        results : $.map(data.categories, function(item){
+                            // hasil dari loopingan yang akan di tampilkan 
+                            return {
+                                // format loopingan select2 js hanya ada 2 text dan id
+                                text : item.strCategory,
+                                id : item.idCategory
+                            };
+                        })
+                    }
+                }
+            }
+        })
+
+        // fungis untuk menghapus multiple
+        $(document).on('click','.btn-remove', function(){
+            //variable ini untuk menampung nilai dengan atribute id
+            var button_id = $(this).attr('id');
+
+            $('.row'+button_id+'').remove();
+        })
+
+        });
+    </script>
+    
+  </body>
+</html>

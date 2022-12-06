@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Suggestion</title>
+  </head>
+  <body>
+    <div id="preloader">
+        <div id="status">
+  
+        </div>
+    </div>
+    <nav class="navbar shadow sticky-top navbar-expand-sm navbar-light bg-custom" id="navdarkmode">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <button class="btn btn-light btn-sm" id="button-toggle">
+              <i class='bx bx-chevrons-right bx-sm text-custom' id="icon"></i>
+            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" style="height: 30px; width: 50px;" type="checkbox" id="switch" checked>
+                  <label class="form-check-label ml-2 mt-2 text-light" for="flexSwitchCheckDefault"><i class='bx bxs-moon bx-sm text-dark' style="position: relative; left: 30px;" id="labelmode"></i></label>
+                </div>
+              </li>
+            </ul>
+            <form class="d-flex">
+             <div class="mr-4 pt-2 text-light">
+             </div>
+              <button class="btn btn-light text-custom" id="logout" type="button">Logout</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <div class="sidebar shadow p-4 bg-light" id="sidebar">
+        <img src="./image/idnlogo.png" alt="logo" width="100px" class="d-block mx-auto">
+        <!-- untuk list side bar -->
+        <ul>
+          <li>
+            <a href="dashboard.html"> <i class='bx bxs-dashboard bx-sm'></i> Dashboard</a>
+          </li>
+          <li>
+            <a href="appertizer.html"> <i class='bx bxs-baguette bx-sm'></i> Appertizer</a>
+          </li>
+          <li>
+            <a href="#"> <i class='bx bxl-discourse bx-sm'></i> Main Coures</a>
+          </li>
+          <li>
+            <a href="#"> <i class='bx bxs-popsicle bx-sm'></i> Dessert</a>
+          </li>
+          <li>
+            <a href="#"> <i class='bx bx-buildings bx-sm'></i> Cabang</a>
+          </li>
+          <li>
+            <a href="owner.html"> <i class='bx bx-child bx-sm'></i> Owner</a>
+          </li>
+          <li>
+            <a href="reservasi.html"> <i class='bx bxs-baguette bx-sm'></i> Reservasi</a>
+          </li>
+          <li>
+            <a href="suggestion.html"> <i class='bx bx-paper-plane' ></i></i> Suggestion</a>
+          </li>
+        </ul>
+    </div>
+    <div id="main-content">
+        <div class="container text-center mt-3">
+                <h2 class="h2 text-center mt-4" id="text-darkmode" style="font-family: Arial, Helvetica, sans-serif">Kritik&Saran</h2>
+                <form method="post" netlify>
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <label for="nama">Nama</label>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="text" name="nama" class="form-control" placeholder="Isi namamu">    
+                    </div>
+                    <div class="col-md-6">
+                        <label for="nama">Email</label>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Isi emailmu">    
+                    </div>
+                    <div class="col-md-6">
+                        <label for="kritik">Kritik&Saran</label>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <textarea class="form-control" name="kritik" cols="30" rows="5" placeholder="tulis dong"></textarea> 
+                        <button type="submit" class="btn btn-primary mt-3 float-start">Submit</button> 
+                    </div>
+                </div>
+                </form>
+        </div>
+    </div>
+    <!-- end main content -->
+    <footer class="footer fixed-bottom bg-primary" id="footer">
+        <div class="container text-center">
+            <span class="text-light">Copyright &copy; by M . Azzam</span>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script>
+    $('#status').fadeOut(),
+    $('#preloader').delay(350).fadeOut('slow')
+    $('body').delay(350).css({'overflow':'visible'});
+    
+    document.getElementById('button-toggle').addEventListener('click', ()=> {
+        document.getElementById('sidebar').classList.toggle('active-sidebar');
+        document.getElementById('main-content').classList.toggle('active-main-content');
+        document.getElementById('footer').classList.toggle('active-footer')
+         })
+
+         $('#button-toggle').click(function(){
+          $('#icon').toggleClass('bx-chevrons-right bx-chevrons-left');
+         })     
+    </script>
+    
+  </body>
+</html>

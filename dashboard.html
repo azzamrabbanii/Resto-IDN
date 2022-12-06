@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- BoxIcon CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Sweetalert CSS -->
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .bg-custom {
+        background-color: rgba(30, 29, 29, 0.642);
+      }
+    </style>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div id="preloader">
+      <div id="status">
+
+      </div>
+    </div>
+     <!-- navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navmode">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <!-- switches darkmode toggle -->
+              <div class="form-check form-switch">
+                <input class="form-check-input" style="width: 50px; height: 30px;" type="checkbox" id="switch" checked>
+                <label class="form-check-label mt-2" style="position: relative; left: 10px;" for="flexSwitchCheckChecked"><i class='bx bxs-moon bx-sm' id="labelmode"></i></label>
+              </div>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <button class="btn btn-outline-primary" id="logout" type="button">Logout</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+    <!-- content area -->
+    <div id="main-content">
+        <!-- pondasi awal -->
+        <div class="container mt-4">
+            <!-- row management -->
+            <div class="row">
+                <!-- create col in row -->
+                <div class="col-md-3">
+                    <div class="card shadow" style="width: 14rem;">
+                        <div class="card-body">
+                            <div class="row">
+                                <!-- untuk icon -->
+                                <div class="col-md-6">
+                                    <i class='bx bxs-baguette bx-lg'></i>
+                                </div>
+                                <!-- untuk judul navigasi -->
+                                <div class="col-md-6">
+                                    <h3 class="scroll">90</h3>
+                                    <span style="font-family: sans-serif Rounded MT Bold;">Appertizer</span>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="text-center">
+                                <a href="appertizer.html" class="btn btn-dark btn-sm rounded-pill">Detail</a>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow" style="width: 14rem;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <i class='bx bxs-brain bx-lg'></i>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="scroll">128</h3>
+                                </div>    
+                            </div>
+                            <hr/>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-dark btn-sm rounded-pill">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                <div class="col-md-3">
+                    <div class="card shadow" style="width: 14rem;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <i class='bx bxs-popsicle bx-lg' ></i>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="scroll">203</h3>
+                                    <span style="font-family: sans-serif;">Dessert</span>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-dark btn-sm rounded-pill">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                <div class="col-md-3">
+                    <div class="card shadow" style="width: 14rem;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <i class='bx bxs-bowl-rice bx-lg' ></i>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="scroll">100</h3>
+                                    <span style="font-family: sans-serif;">Snack</span>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-dark btn-sm rounded-pill">Detail</a>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 mt-4">
+                    <div class="card mb-3 shadow" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="./image/planet.gif" class="img-fluid rounded-start" alt="gif">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title" style="font-family: sans-serif bold;">Cabang</h5>
+                              <div class="row">
+                                <div class="col-md-6">
+                                    <a href="#" class="btn btn-dark btn-sm rounded-pill">102</a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#" class="btn btn-dark btn-sm rounded-pill">Detail</a>
+                                </div>
+                              </div>
+                              <hr/>
+                              <p class="card-text">
+                                Total cabang dari seluruh daerah indonesia
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2 mt-4">
+                    <div class="card shadow" style="width: 11rem;">
+                        <div class="card-body">
+                            <h5 class="card-title text-center" style="font-family: sans-serif bold;">Owner</h5>
+                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active" data-bs-interval="1000">
+                                    <img src="./image/undraw_cat_re_ffpk.svg" class="d-block w-100 mx-auto" alt="image cat">
+                                  </div>
+                                  <div class="carousel-item" data-bs-interval="1000">
+                                    <img src="./image/undraw_male_avatar_re_hguk.svg" class="d-block w-50 mx-auto" alt="image male">
+                                  </div>
+                                  <div class="carousel-item" data-bs-interval="1000">
+                                    <img src="./image/undraw_pumpkin_re_bm46.svg" class="d-block w-50 mx-auto" alt="image pumkin">
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 mt-4">
+                    <div class="card mb-3 shadow" style="max-width: 520px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="./image/chat.gif" class="img-fluid rounded-start" alt="gif">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title" style="font-family: sans-serif bold;">Kritik&Saran</h5>
+                              <div class="row">
+                                <div class="col-md-6">
+                                    <a href="#" class="btn btn-dark btn-sm rounded-pill">102</a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#" class="btn btn-dark btn-sm rounded-pill">Detail</a>
+                                </div>
+                              </div>
+                              <hr/>
+                              <p class="card-text">
+                                Ini akan membantu saya dalam bisnis
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                <!-- menampung chart js -->
+                <div class="col-md-6">
+                    <div class="card shadow">
+                        <div class="card-body">
+                          <!-- chart bar -->
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card shadow">
+                  <div class="card-body">
+                    <!-- chart line -->
+                      <canvas id="myBoobs"></canvas>
+                  </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer shadow py-3 bg-custom mt-3">
+        <div class="container text-center">
+            <span class="text-light">Copyright &copy; by M . Azzam</span>
+        </div>
+    </footer>
+
+    <!-- Jquery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- BoxIcon JS -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- Sweetalert JS -->
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      //format jquery preloader
+         $('#status').fadeOut(),
+         $('#preloader').delay(350).fadeOut('slow')
+         $('body').delay(350).css({'overflow':'visible'});
+       
+      //jquery untuk dark mode
+      $('#switch').click(function(){
+        $('#navmode, body').toggleClass('bg-custom'),
+        // $('#navmode').toggleClass('bg-dark'),
+        $('#labelmode').toggleClass('bxs-moon bx-moon')
+      })
+
+       //jquery untuk fungsi logout
+       $('#logout').click(function(){
+                Swal.fire({
+                title: 'Do you want to Logout?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'OK',
+                }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                  window.location = "index.html" 
+                    } 
+                })
+            })
+         // jquery untuk counter scroll
+         $('.scroll').each(function() {
+                    $(this).prop('Counter',0).animate({
+                        Counter: $(this).text()
+                    },{
+                        duration: 4000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now));
+                        }
+                    })
+                }) 
+          
+                //tolong isi variable chartbar dengan atribut id myChart 
+                var chartBar = document.getElementById("myChart");
+                var myChart = new Chart(chartBar, {
+                  type: 'bar',
+                  data : {
+                    labels : ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'],
+                    datasets : [{
+                      label: 'grafik order',
+                      data: [12,15,60,80,50,80,45,67,23,12,69,98],
+                      borderWidth: 1,
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                      ],
+                      borderWidth: 1
+                    }]
+                  },
+                  option: {
+                    scales: {
+                      y: {
+                        beginAtZero: true
+                      }
+                    }
+                  }
+                })
+                // chartline
+                var chartLine = document.getElementById("myBoobs");
+                var myLine = new Chart(chartLine, {
+                  type: 'line',
+                  data : {
+                    labels : ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'],
+                    datasets : [{
+                      label: 'grafik order',
+                      data: [12,15,60,80,50,80,45,67,23,12,69,98],
+                      borderWidth: 1,
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                      ],
+                      borderWidth: 1
+                    }]
+                  },
+                  option: {
+                    scales: {
+                      y: {
+                        beginAtZero: true
+                      }
+                    }
+                  }
+                })    
+    </script>
+  </body>
+</html>

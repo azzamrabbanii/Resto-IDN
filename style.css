@@ -1,0 +1,65 @@
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 9999;
+}
+
+#status {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-image: url('./image/Cube-1s-200px.gif');
+    z-index: 9999;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin: -50px 0 0 -50px;
+}
+
+.card:hover {
+    -webkit-transition: all .10s case-in-out;
+    -moz-transition: all .10s case-in-out;
+    -o-transition: all .10s case-in-out;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    margin-left: -300px;
+    transition: 0.4s;
+}
+
+.active-main-content , .active-footer {
+    margin-left: 250px;
+}
+
+.active-sidebar {
+    margin-left: 0;
+}
+
+#main-content {
+    transition: 0.4s;
+}
+
+#footer {
+    transition: 0.4s;
+}
+
+a{
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    margin: 20px 0 20px 0;
+}

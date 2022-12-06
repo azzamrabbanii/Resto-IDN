@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicon CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- print css -->
+    <link rel="stylesheet" href=" https://printjs-4de6.kxcdn.com/print.min.css">
+    <title>Appertizer</title>
+  </head>
+  <body>
+    <div id="preloader">
+        <div id="status">
+  
+        </div>
+    </div>
+       <!-- navbar -->
+       <nav class="navbar shadow sticky-top navbar-expand-sm navbar-light bg-custom" id="navdarkmode">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <button class="btn btn-light btn-sm" id="button-toggle">
+              <i class='bx bx-chevrons-right bx-sm text-custom' id="icon"></i>
+            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" style="height: 30px; width: 50px;" type="checkbox" id="switch" checked>
+                  <label class="form-check-label ml-2 mt-2 text-light" for="flexSwitchCheckDefault"><i class='bx bxs-moon bx-sm text-dark' style="position: relative; left: 30px;" id="labelmode"></i></label>
+                </div>
+              </li>
+            </ul>
+            <form class="d-flex">
+             <div class="mr-4 pt-2 text-light">
+                <i class='bx bx-cart bx-sm text-dark' style="position: relative; right: 30px;" role="button" data-bs-toggle="modal" data-bs-target="#cartModal"></i>
+             </div>
+              <button class="btn btn-light text-custom" id="logout" type="button">Logout</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+  <!-- end navbar -->    
+  <!-- Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- untuk posisi modal -->
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cart List</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- add table responsive ketika di mobile -->
+          <div class="table-responsive" id="printArea">
+            <!-- id carList sebagai wadah add to cart -->
+            <table class="table" id="cartList">
+              <!-- urutan table untuk judul -->
+                <thead>
+                  <tr>
+                    <th scope="col">Nomor</th>
+                    <th scope="col">Nama Makanan</th>
+                    <th scope="col">Jumlah</th>
+                  </tr>
+                </thead>
+            </table>
+            <!-- untuk layout total -->
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                  <label for="total" class="col-form-label">Total :</label>
+              </div>
+              <div class="col-auto">
+                  <!-- tambahkan atribut id untuk menampung total harga -->
+                  <input type="number" class="form-control" id="total">
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="printJS('printArea','html')">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar shadow p-4 bg-light" id="sidebar">
+      <img src="./image/idnlogo.png" alt="logo" width="100px" class="d-block mx-auto">
+      <!-- untuk list side bar -->
+      <ul>
+        <li>
+          <a href="dashboard.html"> <i class='bx bxs-dashboard bx-sm'></i> Dashboard</a>
+        </li>
+        <li>
+          <a href="appertizer.html"> <i class='bx bxs-baguette bx-sm'></i> Appertizer</a>
+        </li>
+        <li>
+          <a href="#"> <i class='bx bxl-discourse bx-sm'></i> Main Coures</a>
+        </li>
+        <li>
+          <a href="#"> <i class='bx bxs-popsicle bx-sm'></i> Dessert</a>
+        </li>
+        <li>
+          <a href="#"> <i class='bx bx-buildings bx-sm'></i> Cabang</a>
+        </li>
+        <li>
+          <a href="owner.html"> <i class='bx bx-child bx-sm'></i> Owner</a>
+        </li>
+        <li>
+          <a href="reservasi.html"> <i class='bx bxs-baguette bx-sm'></i> Reservasi</a>
+        </li>
+        <li>
+          <a href="suggestion.html"> <i class='bx bx-paper-plane' ></i></i> Suggestion</a>
+        </li>
+      </ul>
+  </div>
+      <div id="main-content">
+        <!-- pondasi awal -->
+        <div class="container">
+                <!-- untuk judul page -->
+                <h2 class="h2 text-center mt-4" id="text-darkmode" style="font-family: Arial, Helvetica, sans-serif">Appertizer</h2>
+                <!-- untuk menampung data api -->
+                <div class="row d-flex justify-content-start" id="data_api">
+
+                </div>
+        </div>
+      </div>
+    <footer class="footer mt-3 bg-primary" id="footer">
+        <div class="container text-center">
+            <span class="text-light">Copyright &copy; by M . Azzam</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- print.js -->
+    <script src=" https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <script>
+         //format jquery preloader
+         $('#status').fadeOut(),
+         $('#preloader').delay(350).fadeOut('slow')
+         $('body').delay(350).css({'overflow':'visible'});
+
+         //fungsi toggle sidebar with vanila javascript
+         //document mencarikan selector atribute id yang bernama button-toggle
+         document.getElementById('button-toggle').addEventListener('click', ()=> {
+            // sidebar akan pop up
+            document.getElementById('sidebar').classList.toggle('active-sidebar');
+            // main content akan mengecil
+            document.getElementById('main-content').classList.toggle('active-main-content');
+            document.getElementById('footer').classList.toggle('active-footer')
+         })
+
+         //fungsi versi jquery  
+         $('#button-toggle').click(function(){
+          $('#icon').toggleClass('bx-chevrons-right bx-chevrons-left');
+         })
+
+         //menampilkan data api
+         //vat html untuk sebagai wadah data
+         var html = '';
+         // var ajax untuk memanggil endpont / url api
+         var ajax = 'https://www.themealdb.com/api/json/v1/1/categories.php';
+
+         //memanggil api dengan metode fetch with js
+         fetch(ajax).then(res=>res.json()).then(data=>{
+          //fungsi looping
+          for (i = 1; i < ajax.length; i++){
+            // untuk membuat description menjadi singkat
+            var desc = data.categories[i].strCategoryDescription;
+            if (desc.length > 20){
+              desc = desc.substring(0,80);
+            } 
+            html += '<div class="col-md-3 mb-4 mt-4">'+
+            '<div class="card" style="width: 18rem;">'+
+            '<img src="'+data.categories[i].strCategoryThumb+'" class="card-img-top" alt="...">'+
+            '<div class="card-body">'+
+              // untuk menampilkan nama makanan dengan panggil strCategory dari api
+            '<h5 class="card-title">'+data.categories[i].strCategory+'</h5>'+
+            '<p class="card-text">'+desc+'</p>'+
+            '<br/></br>'+
+            '<div class="row d-flex justify-content-between">'+
+              '<div class="col-md-6 mt-1">'+
+                '<i class="bx bx-cart-add bx-sm cart" role="button" data-food="'+data.categories[i].strCategory+'"></i>'+
+              '</div>'+
+              '<div class="col-md-6 mt-1 d-flex justify-content-end">'+
+                '<a href="#" class="btn btn-primary modals" data-image="'+data.categories[i].strCategoryThumb+'" data-desc="'+ data.categories[i].strCategoryDescription+'" data-title="'+ data.categories[i].strCategory+'"  data-bs-toggle="modal" data-bs-target="#detailModal">Detail</a>'+
+              '</div>'+
+            '</div>'+   
+            '</div>'+
+            '</div>'+
+            // Modal detail
+            '<div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">'+
+              '<div class="modal-dialog modal-dialog-centered">'+
+                '<div class="modal-content">'+
+                  '<div class="modal-header">'+
+                    '<h5 class="modal-title titleModal"></h5>'+
+                  '</div>'+
+                  '<div class="modal-body">'+
+                    '<img class="d-block mx-auto imgModal" />'+
+                    '<p class="txtModal"><p/>'+
+                  '</div>'+
+                  '<div class="modal-footer">'+
+                    '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>'+
+                  '</div>'+
+                '</div>'+
+              '</div>'+
+            '</div>'+
+            '</div>';
+            $('#data_api').html(html);
+            
+            //fungsi add to cart
+            $('.cart').click(function(){
+              //var totalNumber untuk mengurutkan seiring bertambahnya jumlah data
+              var totalNumber = 1;
+              //untuk open modal cart
+              $('#cartModal').modal('show');
+              //var n untuk menampung nama makanan yang diambil dari atribut data-food
+              var n = $(this).attr('data-food');
+              //var table untuk menampung nama table
+              var table = document.getElementById('cartList');
+              //logic menampung data food ke table cartlist
+              //var baris untuk menambahkan row yang dimulai dari index 1
+              var baris = table.insertRow(1);
+              //var kolom1 untuk menampung nomor var totalNumber
+              var kolom1 = baris.insertCell(0);
+              //var kolom2 untuk menampung data-food
+              var kolom2 = baris.insertCell(1);
+              //var kolom3 untuk menampung data jumlah
+              var kolom3 = baris.insertCell(2);
+              //untuk membuat dom total number di kolom1
+              kolom1.innerHTML = '<div class="totalNumber"></div>';
+              $("#cartList .totalNumber").each(function(){
+                var jumlahNumber = $(this).text(parseInt(totalNumber++));
+              })
+              //untuk memanggil data-food ke kolom 2
+              kolom2.innerHTML = n;
+              //untuk membuat dom html element input tipe
+              kolom3.innerHTML = '<input type="number" class="form-control jumlah" placeholder="masukan jumlah"/>';
+              //fungsi menjumlahkan total secara real time
+              $('.jumlah').keyup(function(){
+                //sebelum di jumlah kan ,buat angka default 0
+                 var total = 0;
+                 //mengambil nilai/angka dari class jumlah
+                 $('#cartList .jumlah').each(function(){
+                  var jumlah = $(this).val();
+                  total += parseFloat(jumlah)
+                 })
+                 $('#total').val(total);
+              })
+            })
+
+            //untuk membuat detail data   
+            //ketika selector modal di click maka akan menampilkan fungsi yang diinginkan      
+            $('.modals').click(function(){
+              $('.imgModal').attr('src', $(this).attr('data-image'));
+              $('.txtModal').text($(this).attr('data-desc'));
+              $('.titleModal').text($(this).attr('data-title'));
+            })
+          }
+        })
+    </script>
+    
+  </body>
+</html>
