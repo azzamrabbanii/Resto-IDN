@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Maincourse</title>
+        <!-- bootstrap 5 css -->
+        <link rel="preload" as="image" href="image/Cube-1s-200px.gife"/>
+        <link rel="preload" as="image" href="image/idnlogo.png"/>
+        <link rel="preload" as="image" href="image/ayamgoreng.jpeg"/>
+        <link rel="preload" as="image" href="image/nasigoreng.jpeg"/>
+        <link rel="preload" as="image" href="image/rawon.jpeg"/>
+        <link rel="preload" as="image" href="image/gadogado.jpeg"/>
+        <link rel="preload" as="image" href="soto.png"/>
+        <link rel="preload" as="image" href="mie.webp"/>
+        <link rel="preload" as="image" href="sate.png"/>
+        <link rel="preload" as="image" href="sate.png"/>
+        <link rel="preload" as="image" href="lemak.png"/>
+        <link rel="preload" as="image" href="kebab.png"/>
+        <link rel="preload" as="image" href="burger.png"/>
+        <link rel="preload" as="image" href="hot.png"/>
+        <link rel="preload" as="image" href="pizza.png"/>
+        <link rel="preload" as="image" href="spagetti.png"/>
+        <link rel="preload" as="image" href="mac.png"/>
+        <link rel="preload" as="image" href="steak.png"/>
+        <link rel="preload" as="image" href="fish.png"/>
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+          integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK"
+          crossorigin="anonymous"
+        />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!-- custom css -->
+        <link href='style.css' rel='stylesheet'>
+      </head>
+      <body>
+        <div id="preloader"> 
+          <div id="status">
+          </div> 
+        </div>
+        <nav class="navbar shadow sticky-top navbar-expand-sm navbar-light bg-custom" id="navdarkmode">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <button class="btn btn-light btn-sm" id="button-toggle">
+                <i class='bx bx-chevrons-right bx-sm text-custom' id="icon"></i>
+              </button>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" style="height: 30px; width: 50px;" type="checkbox" id="switch" checked>
+                    <label class="form-check-label ml-2 mt-2 text-light" for="flexSwitchCheckDefault"><i class='bx bxs-moon bx-sm text-light' id="labelmode"></i></label>
+                  </div>
+                </li>
+              </ul>
+              <form class="d-lg-flex m-auto mr-2">
+                <button class="btn btn-light text-custom" id="logout" type="button">Logout</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+        <div>
+          <div class="sidebar shadow p-4 bg-light" id="sidebar">
+            <img src="/image/idnlogo.png" alt="idnlogo.png" width="120" height="100" class="d-block mx-auto align-text-top">
+            <!-- <h4 class="mb-5 text-white">SuperVideo</h4> -->
+            <ul>
+                <li>
+                  <a href="dashboard.html"> <i class='bx bxs-dashboard bx-sm'></i> Dashboard</a>
+                </li>
+                <li>
+                  <a href="appertizer.html"> <i class='bx bxs-baguette bx-sm'></i> Appertizer</a>
+                </li>
+                <li>
+                  <a href="maincourse.html"> <i class='bx bxl-discourse bx-sm'></i> Main Coures</a>
+                </li>
+                <li>
+                  <a href="dessert.html"> <i class='bx bxs-popsicle bx-sm'></i> Dessert</a>
+                </li>
+                <li>
+                  <a href="cabang.html"> <i class='bx bx-buildings bx-sm'></i> Cabang</a>
+                </li>
+                <li>
+                  <a href="owner.html"> <i class='bx bx-child bx-sm'></i> Owner</a>
+                </li>
+                <li>
+                  <a href="reservasi.html"> <i class='bx bxs-baguette bx-sm'></i> Reservasi</a>
+                </li>
+                <li>
+                  <a href="suggestion.html"> <i class='bx bx-paper-plane' ></i></i> Suggestion</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+        <div class="p-4" id="main-content">
+          <div class="container">
+            <h1 class="h1 text-center mb-3 text-custom" id="text-darkmode" style="font-family:Brush Script MT;">Main Course Kantin IDN</h1>
+            <ul class="nav nav-pills mb-3 d-flex justify-content-evenly" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active rounded" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-indonesia" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Indonesia</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link rounded" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-western" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Western</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-indonesia" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="row" id="loop">
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="image/ayamgoreng.jpeg" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Ayam Goreng</h5>
+                        <p class="card-text">
+                          Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailayamgoreng" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailayamgoreng">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 150.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-danger'></i>
+                          <i class='bx bxs-star text-danger'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="image/nasigoreng.jpeg" height="215" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Nasi Goreng</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content 
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailnasgor" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailnasgor">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 10.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="image/rawon.jpeg" height="215" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Rawon</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailrawon" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailrawon">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 50.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-danger'></i>
+                          <i class='bx bxs-star text-danger'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="image/gadogado.jpeg" height="215" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Gado - Gado</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailgado" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailgado">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 25.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="image/soto.jpeg" height="215" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Soto</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailsoto" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailsoto">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 100.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="image/mieaceh.jpeg " height="215" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Mie Aceh</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailmie" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailmie">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 75.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="image/sate.jpeg" height="215" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Sate</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailsate" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailsate">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 50.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-danger'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="image/nasilemak.jpeg" height="215" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Nasi Lemak</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detaillemak" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detaillemak">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 5.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-western" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="row">
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="kebab.png" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Kebab</h5>
+                        <p class="card-text">
+                          Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailkebab" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailkebab">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 20.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="burger.png" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Burger</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content 
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailburger" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailburger">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 25.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="hot.png" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Hot Dog</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailhot" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailhot">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 35.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-danger'></i>
+                          <i class='bx bxs-star text-danger'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="pizza.png" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Pizza</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailpizza" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailpizza">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 200.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="spagetti.png" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Spagetti</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailspa" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailspa">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 70.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="mac.png" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Mac and Cheese</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailmac" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailmac">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 80.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="steak.png" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Steak</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailsteak" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailsteak">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 1.000.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-danger'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow" style="width: 18rem;">
+                      <img src="fish.png" class="card-img-top img-responsive" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Fish and Chips</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content
+                          <a class="text-dark" data-bs-toggle="collapse" href="#detailfish" role="button" aria-expanded="false" aria-controls="collapseExample">....</a>
+                          <div class="collapse" id="detailfish">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                          </div>
+                          <b>Rp : 15.000</b>
+                          <br/>
+                          <b>rating :</b>  
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <i class='bx bxs-star text-warning'></i>
+                          <br/><br/>
+                          <i class='bx bx-heart bx-sm text-danger love'></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer shadow py-3 bg-custom">
+          <div class="container text-center">
+            <span class="text-light">Copyright &copy; by Muhammad Wardana</span>
+          </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script>
+          $('#status').fadeOut(10000); 
+          $('#preloader').delay(1000).fadeOut(1000); 
+          $('body').delay(500).css({'overflow':'visible'});
+
+          document.getElementById("button-toggle").addEventListener("click", () => {
+            document.getElementById("sidebar").classList.toggle("active-sidebar");
+            document.getElementById("main-content").classList.toggle("active-main-content");
+          });
+    
+          $('#button-toggle').click(function() {
+            $('button i.bx').toggleClass('bx-chevrons-right bx-chevrons-left');
+          });
+
+          $('#switch').click(function() {
+            $('#navdarkmode, body , #sidebar , footer, .btn.btn-primary.btn-sm').toggleClass('bg-dark');
+            $('#text-darkmode, #side1 , #side2 , #side3 , #side4 , #side5 , #side6').toggleClass('text-light');
+            $('#icon, #logout').toggleClass('text-dark');  
+            $('#labelmode').toggleClass('bxs-moon bx-moon'); 
+            $('.card.shadow').toggleClass('bg-mode');
+            $('.card-body').toggleClass('text-mode');
+          })
+
+          $('.love').click(function() {
+            $(this).toggleClass('bxs-heart bx-heart');
+          })
+
+          $('#logout').click(function() {
+            Swal.fire({
+              icon: 'question',
+              title: 'apakah kamu ingin logout ?',
+              showCancelButton: true,
+              confirmButtonText: 'ok',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location = "login.html";
+              } else if (result.isDenied) {
+                Swal.fire('Changes are not saved', '', 'info')
+              }
+            })
+          });
+        </script>
+      </body>
+    </html>
